@@ -381,6 +381,15 @@ wheels = [
 ]
 
 [[package]]
+name = "jsonref"
+version = "1.1.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/aa/0d/c1f3277e90ccdb50d33ed5ba1ec5b3f0a242ed8c1b1a85d3afeb68464dca/jsonref-1.1.0.tar.gz", hash = "sha256:32fe8e1d85af0fdefbebce950af85590b22b60f9e95443176adbde4e1ecea552", size = 8814 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/0c/ec/e1db9922bceb168197a558a2b8c03a7963f1afe93517ddd3cf99f202f996/jsonref-1.1.0-py3-none-any.whl", hash = "sha256:590dc7773df6c21cbf948b5dac07a72a251db28b0238ceecce0a2abfa8ec30a9", size = 9425 },
+]
+
+[[package]]
 name = "markdown-it-py"
 version = "3.0.0"
 source = { registry = "https://pypi.org/simple" }
@@ -466,13 +475,32 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "gradio", extra = ["mcp"] },
+    { name = "mcp" },
+    { name = "smolagents", extra = ["mcp"] },
     { name = "textblob" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "gradio", extras = ["mcp"] },
+    { name = "mcp" },
+    { name = "smolagents", extras = ["mcp"] },
     { name = "textblob" },
+]
+
+[[package]]
+name = "mcpadapt"
+version = "0.1.9"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "jsonref" },
+    { name = "mcp" },
+    { name = "pydantic" },
+    { name = "python-dotenv" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/9e/68/85c0946d567088d8d55f1c30cb942bcfec2585941a3f45b790e423b994c8/mcpadapt-0.1.9.tar.gz", hash = "sha256:03e601c4c083f3f4eb178e6a6bcd157bcb45e25c140ea0895567bab346b67645", size = 3540887 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/83/78/0310684763e5753a3a8128dab6c87ba1e20dd907b696680592bebebc84b6/mcpadapt-0.1.9-py3-none-any.whl", hash = "sha256:9f2a6ad1155efdf1a43c11e8449ae9258295c4e140c3c6ff672983a8ac8bde33", size = 17469 },
 ]
 
 [[package]]
@@ -1038,6 +1066,29 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz", hash = "sha256:ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81", size = 34031 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl", hash = "sha256:4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274", size = 11050 },
+]
+
+[[package]]
+name = "smolagents"
+version = "1.17.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "huggingface-hub" },
+    { name = "jinja2" },
+    { name = "pillow" },
+    { name = "python-dotenv" },
+    { name = "requests" },
+    { name = "rich" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/b3/f3/1572c767e40353409c3b7d002a009b978013bd74c63d93fc96650eee3d49/smolagents-1.17.0.tar.gz", hash = "sha256:8d4ec4ccb759986560299e5489eab530282c68a4110820919d13a69e642f2b5b", size = 177215 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c0/c0/43c4cd2a98943992dbee705cbcfc57d6da89e4d75860bb379dc1e2fa1f33/smolagents-1.17.0-py3-none-any.whl", hash = "sha256:b6b7853d454c24c949cb306858523e97792310b9ab422a61cba5ccbab48f01c1", size = 133973 },
+]
+
+[package.optional-dependencies]
+mcp = [
+    { name = "mcp" },
+    { name = "mcpadapt" },
 ]
 
 [[package]]

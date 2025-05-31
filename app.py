@@ -23,6 +23,7 @@ def sentiment_analysis(text: str) -> dict:
 
 
 # create the gradio interface
+# gr.Interface creates both the web UI and MCP server
 demo = gr.Interface(
     fn=sentiment_analysis,
     inputs=gr.Textbox(placeholder="Enter text to analyze..."),
