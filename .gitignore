@@ -10,3 +10,6 @@ wheels/
 .venv
 
 .gradio
+
+package-lock.json
+package.json
